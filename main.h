@@ -24,9 +24,7 @@
  * @fmt: The format.
  * @fn: The function associated.
  */
-
 struct fmt
-
 {
 	char fmt;
 	int (*fn)(va_list, char[], int, int, int, int);
