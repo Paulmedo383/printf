@@ -8,15 +8,18 @@
 #define BUFF_SIZE 1024
 
 /* FLAGS */
+<<<<<<< HEAD
 
 #define F_minus 1
+=======
+#define F_MINUS 1
+>>>>>>> bc6de5d3f5b9671deadf8e263c3762e24bc53c1a
 #define F_PLUS 2
 #define F_ZERO 4
 #define F_HASH 8
 #define F_SPACE 16
 
 /* SIZES */
-
 #define S_LONG 2
 #define S_SHORT 1
 
@@ -42,6 +45,7 @@ struct fmt
  * @fmt: The format.
  * @fm_t: The function associated.
  */
+<<<<<<< HEAD
 
 typedef struct fmt fmt_t;
 int _printf(const char *format, ...);
@@ -49,6 +53,40 @@ int handle_print(const chat *fmt, int *i,
 		va_list list, char buffer[], int width, int precision, in size);
 
 /*********** FUNCTIONS **********/
+=======
+typedef struct fmt fmt_t;
+
+int _printf(const char *format, ...);
+int handle_print(const char *fmt, int *i,
+va_list list, char buffer[], int flags, int width, int precision, int size);
+
+/****************** FUNCTIONS ******************/
+
+/* Funtions to print chars and strings */
+int print_char(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_string(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_percent(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+
+/* Functions to print numbers */
+int print_int(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_binary(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_unsigned(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_octal(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_hexadecimal(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+int print_hexa_upper(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+
+int print_hexa(va_list types, char map_to[],
+char buffer[], int flags, char flag_ch, int width, int precision, int size);
+>>>>>>> bc6de5d3f5b9671deadf8e263c3762e24bc53c1a
 
 /* functions to print chars and strings*/
 int print_char(va_list types, char buffer[],
@@ -104,9 +142,17 @@ int write_number(int is_positive, int ind, char buffer[],
 int write_num(int ind, char bff[], int flags, int width,
 		int precision, int length, char padd, char extra_c);
 int write_pointer(char buffer[], int ind, int length,
+<<<<<<< HEAD
 		int width, int flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind, char buffer[],
 		int flags, int width, int precision, int size);
+=======
+	int width, int flags, char padd, char extra_c, int padd_start);
+
+int write_unsgnd(int is_negative, int ind,
+char buffer[],
+	int flags, int width, int precision, int size);
+>>>>>>> bc6de5d3f5b9671deadf8e263c3762e24bc53c1a
 
 /***** UTILS *****/
 int is_printable(char);
